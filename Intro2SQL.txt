@@ -1,0 +1,55 @@
+Hi!
+source: 
+https://docs.google.com/document/d/1qdfHcejYsrbIYVpHU26nzYftBMygpQh0Ansa6x-YJQA/edit
+
+Question 1: Who has read the most articles?
+
+SELECT COUNT(DISTINCT username) FROM articles;
+ Select username, count(*) as read
+ From   articles
+ Group By username
+ Order By read desc
+ limit 1;
+ 
+Question 2: Show the name and count of each user who has read 2 or more articles.
+ Select username, count(*) as read
+ From   articles
+ Group By username
+ Order By read desc
+ Filter(Where read >= 2)
+ 
+Question 3: Show the name as well as a new column called ‘reader_type’, where:
+reader_type = "avid" if read at least 3 articles, "casual" if fewer
+ Select username, count(*) as read
+ From   articles
+ Group By username
+
+ ALTER TABLE articles
+ ADD reader_type string;
+ WHERE read >= 3 
+ reader_type = 'avid'
+ WHERE read < 3 
+ reader_type = 'casual'
+ 
+Question 4: For each user, show the last article they read and the time they read it
+ Select username, max(time)
+ From   articles
+ Group By username
+
+
+Question 5: Create a histogram for the number of article reads per user. For example, 
+there were 2 users who read 1 article each, 1 user who read 3 articles, 2 users who read 4 articles each
+
+ Select username, count(*) as read
+ From   articles
+ Group By username
+ Order By read desc
+ select count(read) group by read order by read desc
+ 
+
+Question 6: Which country has a population that is more than Canada but less than Poland? Show the name and the population.
+select name, population from world
+where population > (select population from world where name = "Canada")
+and population < (select population from world where name = "Poland")
+
+
