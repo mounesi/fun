@@ -2,7 +2,8 @@
 
 ## style transfer
 ![Why?!](/images/chera.png)
-I have made this AI art as a combination of the master artpaint "The_Great_Wave_off_Kanagawa" and Persian Nastaliq handwriting.
+
+I have made this AI art as a combination of the master artpaint "The_Great_Wave_off_Kanagawa" and my Persian Nastaliq handwriting. The word is pronounce as "CHERA" which literally means (why?).
 
 ## colorizing bw movies:
 
